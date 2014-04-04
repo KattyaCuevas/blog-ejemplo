@@ -1,6 +1,5 @@
 <p id="notice"><%= notice %></p>
- <h2><%= link_to_unless_current @post.titulo, @post %></h2>
- <%= simple_format @post.texto %>
+<%= render partial: @post %>
 
- <%= link_to 'Editar', edit_post_path(@post) %> |
- <%= link_to 'Atrás', posts_path %>
+<%= link_to 'Editar', edit_post_path(@post) %> |
+<%= link_to 'Atrás', posts_path %>
