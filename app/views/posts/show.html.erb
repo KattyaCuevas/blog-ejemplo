@@ -3,3 +3,16 @@
 
 <%= link_to 'Editar', edit_post_path(@post) %> |
 <%= link_to 'Atrás', posts_path %>
+
+<h2>Comentarios</h2>
+<div id="comentarios">
+  <%= render partial: @post.comentarios %>
+</div>
+
+<%= form_for [@post, Comentario.new] do |f| %>
+  <p>
+    <%= f.label :texto, "Nuevo comentario" %><br/>
+    <%= f.text_area :texto %>
+  </p>
+  <p><%= f.submit "Agregar comentario" %></p>
+<% end %>
